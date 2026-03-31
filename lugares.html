@@ -1,4 +1,228 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lugares — Barrio La Boca</title>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html">
+    <span>Barrio</span>
+    <span>la Boca</span>
+  </a>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="historia.html">Historia</a></li>
+    <li><a href="lugares.html">Lugares</a></li>
+    <li><a href="agenda.html">Agenda</a></li>
+    <li><a href="mapa.html">Mapa</a></li>
+  </ul>
+  <button aria-label="Buscar">Buscar</button>
+</nav>
+
+<!-- HERO -->
+<section>
+  <h1>Donde mires, hay historia</h1>
+  <p>Filtrá los lugares por lo que más te interesa: arte, gastronomía, historia, deporte o entretenimiento. La Boca tiene algo para cada visitante.</p>
+  <ul>
+    <li><strong>47+</strong> Lugares</li>
+    <li><strong>12</strong> Museos</li>
+    <li><strong>5</strong> Barrios</li>
+  </ul>
+</section>
+
+<!-- FILTROS -->
+<section>
+  <p>— Filtrar por categoría</p>
+  <button data-cat="todo">Todo</button>
+  <button data-cat="arte">Arte</button>
+  <button data-cat="historia">Historia</button>
+  <button data-cat="gastronomia">Gastronomía</button>
+  <button data-cat="deporte">Deporte</button>
+  <button data-cat="nocturnidad">Nocturnidad</button>
+</section>
+
+<!-- LUGARES -->
+<section id="lugares">
+
+  <article data-cat="arte" id="lugar-caminito">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Caminito_Buenos_Aires.jpg/1200px-Caminito_Buenos_Aires.jpg" alt="Caminito"/>
+    <p>Arte · Historia · <strong>Destacado</strong></p>
+    <h2>Caminito</h2>
+    <p>El pasaje más colorido de Buenos Aires, cuna del tango y del arte popular.</p>
+    <details>
+      <summary>Más información</summary>
+      <p>El pasaje a cielo abierto más famoso de Buenos Aires. Sus conventillos pintados con los colores de los barcos del Riachuelo se convirtieron en el símbolo visual de La Boca. Aquí Benito Quinquela Martín impulsó la transformación del pasaje en museo vivo, mezclando arte, arquitectura y cultura popular en cada rincón.</p>
+      <ul>
+        <li><strong>Horario:</strong> Todos los días, 9:00 – 19:00</li>
+        <li><strong>Entrada:</strong> Gratuito</li>
+        <li><strong>Dirección:</strong> Caminito s/n, La Boca</li>
+      </ul>
+    </details>
+  </article>
+
+  <article data-cat="deporte" id="lugar-bombonera">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Estadio_Alberto_J._Armando_-_La_Bombonera.jpg/1200px-Estadio_Alberto_J._Armando_-_La_Bombonera.jpg" alt="Bombonera"/>
+    <p>Deporte</p>
+    <h2>La Bombonera</h2>
+    <p>El estadio de Boca Juniors, uno de los más icónicos del mundo.</p>
+    <details>
+      <summary>Más información</summary>
+      <p>El estadio mítico del Club Atlético Boca Juniors, inaugurado en 1940. Su diseño único con tres tribunas verticales y una horizontal crea una acústica incomparable. La pasión xeneize lo convierte en uno de los estadios más impresionantes y emotivos del mundo. Sede de la historia grande del fútbol argentino.</p>
+      <ul>
+        <li><strong>Horario:</strong> Visitas guiadas: Mar–Dom 10:00 – 18:00</li>
+        <li><strong>Entrada:</strong> $3.500 ARS</li>
+        <li><strong>Dirección:</strong> Brandsen 805, La Boca</li>
+      </ul>
+    </details>
+  </article>
+
+  <article data-cat="historia" id="lugar-quinquela">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Museo_Quinquela_Martin.jpg/1200px-Museo_Quinquela_Martin.jpg" alt="Museo Quinquela"/>
+    <p>Historia · Arte</p>
+    <h2>Museo Quinquela</h2>
+    <p>La obra y legado del pintor del Riachuelo.</p>
+    <details>
+      <summary>Más información</summary>
+      <p>El museo dedicado al pintor más amado de La Boca, construido por el propio Quinquela en 1938. Alberga más de 1.000 obras que retratan la vida del puerto, los obreros y el barrio con pinceladas gruesas y colores vibrantes. También exhibe mascarones de proa y obras de otros artistas argentinos.</p>
+      <ul>
+        <li><strong>Horario:</strong> Mar–Vie 10:00–17:30 · Sáb–Dom 11:00–17:30</li>
+        <li><strong>Entrada:</strong> $1.200 ARS</li>
+        <li><strong>Dirección:</strong> Av. Pedro de Mendoza 1835, La Boca</li>
+      </ul>
+    </details>
+  </article>
+
+  <article data-cat="arte" id="lugar-arte-callejero">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/La_Boca_Buenos_Aires_Colorful_Buildings.jpg/1200px-La_Boca_Buenos_Aires_Colorful_Buildings.jpg" alt="Arte callejero"/>
+    <p>Arte</p>
+    <h2>Arte Callejero</h2>
+    <p>Murales y esculturas en cada esquina del barrio.</p>
+    <details>
+      <summary>Más información</summary>
+      <p>La Boca es un museo a cielo abierto. Sus calles están repletas de murales, esculturas y performances que convierten cada esquina en una obra de arte. Artistas de todo el país y el mundo dejan su huella en las paredes del barrio, generando un diálogo permanente entre el arte y la comunidad.</p>
+      <ul>
+        <li><strong>Horario:</strong> Siempre visible</li>
+        <li><strong>Entrada:</strong> Gratuito</li>
+        <li><strong>Dirección:</strong> Barrio de La Boca, varias calles</li>
+      </ul>
+    </details>
+  </article>
+
+  <article data-cat="nocturnidad" id="lugar-tango">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Tango_in_buenos_aires.jpg/1200px-Tango_in_buenos_aires.jpg" alt="Tango"/>
+    <p>Nocturnidad · Arte</p>
+    <h2>Tango en Vivo</h2>
+    <p>Milongas y shows nocturnos en la cuna del tango.</p>
+    <details>
+      <summary>Más información</summary>
+      <p>La Boca es la cuna del tango. Sus milongas tradicionales y escenarios modernos ofrecen shows en vivo noche a noche, donde bailarines de todo el mundo se mezclan con los vecinos del barrio. Una experiencia imprescindible para entender el alma de Buenos Aires.</p>
+      <ul>
+        <li><strong>Horario:</strong> Noche: desde las 21:00</li>
+        <li><strong>Entrada:</strong> Desde $5.000 ARS</li>
+        <li><strong>Dirección:</strong> Diversas ubicaciones en La Boca</li>
+      </ul>
+    </details>
+  </article>
+
+  <article data-cat="gastronomia" id="lugar-bodegones">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Caminito_Boca_Buenos_Aires.jpg/1200px-Caminito_Boca_Buenos_Aires.jpg" alt="Gastronomía"/>
+    <p>Gastronomía</p>
+    <h2>Bodegones y Pasta</h2>
+    <p>La cocina italiana del Riachuelo, viva en cada mesa.</p>
+    <details>
+      <summary>Más información</summary>
+      <p>Los bodegones y restaurantes del Caminito y sus alrededores ofrecen cocina italiana y porteña con vistas al paseo más famoso del barrio. Desde pastas caseras heredadas de los inmigrantes genoveses hasta parrillas tradicionales, la gastronomía de La Boca es un viaje en sí misma.</p>
+      <ul>
+        <li><strong>Horario:</strong> 12:00 – 23:00 (varía por local)</li>
+        <li><strong>Entrada:</strong> Libre</li>
+        <li><strong>Dirección:</strong> Zona Caminito, La Boca</li>
+      </ul>
+    </details>
+  </article>
+
+  <article data-cat="historia" id="lugar-vuelta-rocha">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Riachuelo_Buenos_Aires.jpg/1200px-Riachuelo_Buenos_Aires.jpg" alt="Riachuelo"/>
+    <p>Historia · <strong>Destacado</strong></p>
+    <h2>Vuelta de Rocha</h2>
+    <p>El corazón histórico del barrio, a orillas del Riachuelo.</p>
+    <details>
+      <summary>Más información</summary>
+      <p>El Riachuelo fue el origen de todo. La curva de la Vuelta de Rocha, donde el río gira y forma un pequeño puerto, fue el punto de llegada de los primeros inmigrantes genoveses. Hoy es un paseo histórico con vistas al Puente Transbordador y al antiguo puerto, escenario de la obra de Quinquela.</p>
+      <ul>
+        <li><strong>Horario:</strong> Siempre accesible</li>
+        <li><strong>Entrada:</strong> Gratuito</li>
+        <li><strong>Dirección:</strong> Av. Pedro de Mendoza, La Boca</li>
+      </ul>
+    </details>
+  </article>
+
+  <article data-cat="historia" id="lugar-puente">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Puente_Transbordador_Buenos_Aires.jpg/1200px-Puente_Transbordador_Buenos_Aires.jpg" alt="Puente Transbordador"/>
+    <p>Historia</p>
+    <h2>Puente Transbordador</h2>
+    <p>Patrimonio industrial del Riachuelo, construido en 1914.</p>
+    <details>
+      <summary>Más información</summary>
+      <p>Patrimonio histórico de la Ciudad de Buenos Aires, este puente construido en 1914 fue el primero de su tipo en Latinoamérica. Su estructura metálica imponente domina el paisaje del Riachuelo y es hoy un símbolo del pasado industrial de La Boca y de la ciudad.</p>
+      <ul>
+        <li><strong>Horario:</strong> Exterior visible siempre</li>
+        <li><strong>Entrada:</strong> Gratuito</li>
+        <li><strong>Dirección:</strong> Av. Pedro de Mendoza, La Boca</li>
+      </ul>
+    </details>
+  </article>
+
+</section>
+
+<!-- MAPA CTA -->
+<section>
+  <h2>Explorá todos los lugares en el mapa interactivo</h2>
+  <p>Más de 47 puntos de interés con filtros por categoría y recomendaciones exclusivas.</p>
+  <a href="mapa.html">Ver el Mapa →</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>LA <strong>BOCA</strong></p>
+  <nav>
+    <ul>
+      <li><a href="historia.html">Historia</a></li>
+      <li><a href="lugares.html">Lugares</a></li>
+      <li><a href="agenda.html">Agenda</a></li>
+      <li><a href="mapa.html">Mapa</a></li>
+      <li><a href="#">Galería</a></li>
+      <li><a href="#">Contacto</a></li>
+    </ul>
+  </nav>
+  <p>© 2026 Barrio La Boca · Grupo 3 · Tecnología</p>
+  <p>Buenos Aires — Argentina</p>
+</footer>
+
+<script>
+  // Filtros
+  const filterBtns = document.querySelectorAll('[data-cat]');
+  const articulos = document.querySelectorAll('#lugares article');
+
+  filterBtns.forEach(btn => {
+    if (btn.tagName !== 'BUTTON') return;
+    btn.addEventListener('click', () => {
+      const cat = btn.dataset.cat;
+      articulos.forEach(art => {
+        art.hidden = cat !== 'todo' && art.dataset.cat !== cat;
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
+
+
+<!--<!DOCTYPE html>
     <html lang="en">
         <head>
             <meta charset="UTF-8">
@@ -22,7 +246,6 @@
             </nav>
 
 
-            <h1>mili mira esto es la pag de lugares</h1>
-            <h3>me crees?</h3>
         </body>
     </html>
+-->
