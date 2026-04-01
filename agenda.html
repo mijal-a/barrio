@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Agenda — Barrio La Boca</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,700;0,900;1,700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --amarillo: #F5B800;
+      --azul:     #1B3A7A;
+      --rojo:     #C0272D;
+      --crema:    #F5F0E8;
+      --negro:    #111111;
+      --blanco:   #FFFFFF;
+    }
+
+    body {
+      font-family: 'Barlow', sans-serif;
+      background: var(--crema);
+      color: var(--negro);
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--amarillo);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      height: 68px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-logo {
+      font-family: 'Barlow Condensed', sans-serif;
+      line-height: 1.1;
+      text-decoration: none;
+    }
+    .nav-logo span:first-child {
+      display: block;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 13px;
+      color: var(--rojo);
+    }
+    .nav-logo span:last-child {
+      display: block;
+      font-weight: 900;
+      font-size: 26px;
+      color: var(--rojo);
+      text-transform: lowercase;
+      letter-spacing: -0.5px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--negro);
+      opacity: 0.6;
+      transition: opacity .2s;
+    }
+    .nav-links a:hover { opacity: 1; }
+    .nav-links a.active {
+      color: var(--rojo);
+      opacity: 1;
+      border-bottom: 2px solid var(--rojo);
+      padding-bottom: 2px;
+    }
+    .nav-search {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--negro);
+      opacity: 0.7;
+    }
+    .nav-search:hover { opacity: 1; }
+
+    /* ── HERO ── */
+    header.hero {
+      background: var(--rojo);
+      padding: 72px 48px 56px;
+      position: relative;
+      overflow: hidden;
+    }
+    header.hero::before {
+      content: "AGENDA";
+      position: absolute;
+      right: -10px;
+      top: -10px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 220px;
+      color: rgba(0,0,0,0.08);
+      line-height: 1;
+      pointer-events: none;
+      letter-spacing: -4px;
+    }
+    header.hero h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: clamp(56px, 8vw, 96px);
+      color: var(--blanco);
+      line-height: 0.9;
+      text-transform: uppercase;
+      letter-spacing: -2px;
+    }
+    header.hero h1 em {
+      font-style: italic;
+      color: var(--amarillo);
+    }
+    header.hero p {
+      margin-top: 20px;
+      color: rgba(255,255,255,0.8);
+      font-size: 17px;
+      max-width: 520px;
+      line-height: 1.6;
+    }
+
+    /* ── TICKER ── */
+    .ticker {
+      background: var(--amarillo);
+      padding: 12px 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .ticker-inner {
+      display: inline-block;
+      animation: ticker 24s linear infinite;
+    }
+    .ticker-inner span {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--negro);
+      margin: 0 28px;
+    }
+    .ticker-inner span::before { content: "/ "; opacity: 0.4; }
+    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* ── FILTROS ── */
+    section.filtros {
+      padding: 40px 48px 20px;
+    }
+    .filtros-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--rojo);
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .filtros-lista {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .filtro-btn {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 9px 22px;
+      border: 2px solid var(--negro);
+      background: transparent;
+      cursor: pointer;
+      transition: all .18s;
+    }
+    .filtro-btn:hover  { background: var(--negro); color: var(--blanco); }
+    .filtro-btn.active { background: var(--negro); color: var(--blanco); }
+
+    /* ── EVENTO DESTACADO ── */
+    section.destacado {
+      padding: 0 48px;
+      margin-bottom: 2px;
+    }
+    article.evento-destacado {
+      background: var(--azul);
+      display: flex;
+      gap: 0;
+      overflow: hidden;
+      position: relative;
+    }
+    .destacado-fecha {
+      background: var(--amarillo);
+      min-width: 120px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 24px;
+      text-align: center;
+    }
+    .destacado-fecha strong {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 64px;
+      color: var(--negro);
+      line-height: 1;
+      display: block;
+    }
+    .destacado-fecha span {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--negro);
+      display: block;
+    }
+    .destacado-cuerpo {
+      padding: 40px 44px;
+      flex: 1;
+    }
+    .evento-cat {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--amarillo);
+      margin-bottom: 10px;
+    }
+    .destacado-cuerpo h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 52px;
+      color: var(--blanco);
+      text-transform: uppercase;
+      letter-spacing: -1px;
+      line-height: 1;
+    }
+    .destacado-cuerpo p {
+      color: rgba(255,255,255,0.75);
+      font-size: 15px;
+      margin-top: 12px;
+      line-height: 1.65;
+      max-width: 560px;
+    }
+    .destacado-meta {
+      display: flex;
+      gap: 28px;
+      margin-top: 24px;
+      flex-wrap: wrap;
+    }
+    .meta-item strong {
+      display: block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--amarillo);
+      margin-bottom: 2px;
+    }
+    .meta-item span {
+      font-size: 14px;
+      color: rgba(255,255,255,0.85);
+    }
+    .badge-destacado {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: var(--rojo);
+      color: var(--blanco);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 5px 12px;
+    }
+
+    /* ── GRID DE EVENTOS ── */
+    section.eventos {
+      padding: 24px 48px 80px;
+    }
+    .eventos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    article.evento-card {
+      background: var(--blanco);
+      display: flex;
+      flex-direction: column;
+      transition: transform .2s;
+      cursor: default;
+    }
+    article.evento-card:hover { transform: translateY(-3px); }
+
+    .evento-card-top {
+      display: flex;
+      gap: 0;
+    }
+    .evento-card-fecha {
+      background: var(--azul);
+      min-width: 64px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 10px;
+      text-align: center;
+    }
+    .evento-card-fecha strong {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 34px;
+      color: var(--blanco);
+      line-height: 1;
+      display: block;
+    }
+    .evento-card-fecha span {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--amarillo);
+      display: block;
+    }
+    .evento-card-header {
+      flex: 1;
+      padding: 16px 18px;
+      border-bottom: 2px solid var(--crema);
+    }
+    .evento-card-header .evento-cat {
+      color: var(--rojo);
+      margin-bottom: 4px;
+    }
+    .evento-card-header h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 22px;
+      text-transform: uppercase;
+      color: var(--negro);
+      line-height: 1.1;
+      letter-spacing: -0.3px;
+    }
+    .evento-card-body {
+      padding: 16px 18px;
+      flex: 1;
+    }
+    .evento-card-body p {
+      font-size: 13.5px;
+      color: #555;
+      line-height: 1.55;
+    }
+    .evento-card-footer {
+      padding: 12px 18px;
+      border-top: 1px solid var(--crema);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .evento-card-footer span {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #999;
+    }
+    .evento-card-footer .hora {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 18px;
+      color: var(--negro);
+      letter-spacing: -0.5px;
+    }
+
+    /* variante amarilla para un card */
+    article.evento-card.amarillo {
+      background: var(--amarillo);
+    }
+    article.evento-card.amarillo .evento-card-fecha { background: var(--negro); }
+    article.evento-card.amarillo .evento-card-header { border-color: rgba(0,0,0,0.1); }
+    article.evento-card.amarillo .evento-card-header h3 { color: var(--negro); }
+    article.evento-card.amarillo .evento-card-body p { color: rgba(0,0,0,0.65); }
+    article.evento-card.amarillo .evento-card-footer { border-color: rgba(0,0,0,0.1); }
+    article.evento-card.amarillo .evento-card-footer span { color: rgba(0,0,0,0.5); }
+    article.evento-card.amarillo .evento-card-footer .hora { color: var(--negro); }
+
+    /* variante roja */
+    article.evento-card.rojo {
+      background: var(--rojo);
+    }
+    article.evento-card.rojo .evento-card-fecha { background: var(--negro); }
+    article.evento-card.rojo .evento-card-fecha span { color: var(--amarillo); }
+    article.evento-card.rojo .evento-cat { color: var(--amarillo); }
+    article.evento-card.rojo .evento-card-header { border-color: rgba(255,255,255,0.15); }
+    article.evento-card.rojo .evento-card-header h3 { color: var(--blanco); }
+    article.evento-card.rojo .evento-card-body p { color: rgba(255,255,255,0.75); }
+    article.evento-card.rojo .evento-card-footer { border-color: rgba(255,255,255,0.15); }
+    article.evento-card.rojo .evento-card-footer span { color: rgba(255,255,255,0.6); }
+    article.evento-card.rojo .evento-card-footer .hora { color: var(--blanco); }
+
+    /* ── NEWSLETTER ── */
+    section.newsletter {
+      background: var(--negro);
+      margin: 0 0 0 0;
+      padding: 56px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .newsletter h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 42px;
+      color: var(--blanco);
+      text-transform: uppercase;
+      letter-spacing: -1px;
+      line-height: 1;
+    }
+    .newsletter h2 em {
+      color: var(--amarillo);
+      font-style: italic;
+    }
+    .newsletter p {
+      color: rgba(255,255,255,0.55);
+      font-size: 14px;
+      margin-top: 8px;
+      max-width: 360px;
+    }
+    .newsletter-form {
+      display: flex;
+      gap: 0;
+    }
+    .newsletter-form input[type="email"] {
+      font-family: 'Barlow', sans-serif;
+      font-size: 14px;
+      padding: 14px 20px;
+      border: none;
+      background: rgba(255,255,255,0.1);
+      color: var(--blanco);
+      width: 260px;
+      outline: none;
+    }
+    .newsletter-form input::placeholder { color: rgba(255,255,255,0.35); }
+    .newsletter-form button {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      background: var(--amarillo);
+      color: var(--negro);
+      border: none;
+      padding: 14px 28px;
+      cursor: pointer;
+      transition: background .2s;
+    }
+    .newsletter-form button:hover { background: #ffc800; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--negro);
+      padding: 48px;
+      border-top: 1px solid rgba(255,255,255,0.07);
+    }
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 36px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      gap: 40px;
+    }
+    .footer-logo {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 28px;
+      color: var(--amarillo);
+      letter-spacing: -0.5px;
+    }
+    .footer-logo span { color: var(--blanco); }
+    .footer-nav {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+    .footer-nav a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .footer-nav a:hover { color: var(--blanco); }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 24px;
+    }
+    .footer-copy { font-size: 12px; color: rgba(255,255,255,0.3); }
+    .footer-loc {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      header.hero { padding: 48px 20px 40px; }
+      header.hero::before { font-size: 120px; }
+      section.filtros { padding: 32px 20px 16px; }
+      section.destacado { padding: 0 20px; }
+      article.evento-destacado { flex-direction: column; }
+      .destacado-fecha { flex-direction: row; gap: 12px; justify-content: flex-start; min-width: auto; padding: 16px 20px; }
+      .destacado-fecha strong { font-size: 40px; }
+      .destacado-cuerpo { padding: 24px 20px; }
+      .destacado-cuerpo h2 { font-size: 36px; }
+      section.eventos { padding: 16px 20px 60px; }
+      .eventos-grid { grid-template-columns: 1fr; }
+      section.newsletter { padding: 40px 20px; flex-direction: column; align-items: flex-start; }
+      .newsletter-form { flex-direction: column; width: 100%; }
+      .newsletter-form input[type="email"] { width: 100%; }
+      footer { padding: 32px 20px; }
+      .footer-top { flex-direction: column; gap: 24px; }
+      .footer-nav { flex-wrap: wrap; gap: 14px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <span>Barrio</span>
+    <span>la Boca</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="historia.html">Historia</a></li>
+    <li><a href="lugares.html">Lugares</a></li>
+    <li><a href="agenda.html" class="active">Agenda</a></li>
+    <li><a href="mapa.html">Mapa</a></li>
+  </ul>
+  <button class="nav-search" aria-label="Buscar">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+  </button>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <h1>Lo que<br><em>pasa</em><br>esta semana</h1>
+  <p>Eventos, shows y actividades culturales de La Boca. Tango, arte, fútbol y mucho más, todos los días del año.</p>
+</header>
+
+<main>
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span>Milonga en Caminito</span><span>Visita guiada Bombonera</span><span>Feria de artesanos</span><span>Show de tango</span><span>Expo Quinquela</span><span>Mercado del Puerto</span><span>Noche de murga</span><span>Clínica de pintura</span>
+    <span>Milonga en Caminito</span><span>Visita guiada Bombonera</span><span>Feria de artesanos</span><span>Show de tango</span><span>Expo Quinquela</span><span>Mercado del Puerto</span><span>Noche de murga</span><span>Clínica de pintura</span>
+  </div>
+</div>
+
+<!-- FILTROS -->
+<section class="filtros">
+  <p class="filtros-label">— Filtrar por tipo de evento</p>
+  <div class="filtros-lista">
+    <button class="filtro-btn active" data-cat="todo">Todo</button>
+    <button class="filtro-btn" data-cat="arte">Arte</button>
+    <button class="filtro-btn" data-cat="musica">Música</button>
+    <button class="filtro-btn" data-cat="deporte">Deporte</button>
+    <button class="filtro-btn" data-cat="gastronomia">Gastronomía</button>
+    <button class="filtro-btn" data-cat="visitas">Visitas guiadas</button>
+  </div>
+</section>
+
+<!-- EVENTO DESTACADO -->
+<section class="destacado">
+  <article class="evento-destacado" data-cat="musica">
+    <div class="destacado-fecha">
+      <strong>05</strong>
+      <span>Abr</span>
+      <span>2026</span>
+    </div>
+    <div class="destacado-cuerpo">
+      <p class="evento-cat">Música · Nocturnidad</p>
+      <h2>Gran Noche<br>de Tango</h2>
+      <p>
+        El Caminito se viste de gala para una noche única con los mejores exponentes del tango de Buenos Aires.
+        Tres orquestas en vivo, bailarines profesionales y el alma del barrio más porteño de todos.
+        Una experiencia que no se repite.
+      </p>
+      <div class="destacado-meta">
+        <div class="meta-item">
+          <strong>Horario</strong>
+          <span>21:00 hs</span>
+        </div>
+        <div class="meta-item">
+          <strong>Lugar</strong>
+          <span>Caminito s/n</span>
+        </div>
+        <div class="meta-item">
+          <strong>Entrada</strong>
+          <span>$4.500 ARS</span>
+        </div>
+        <div class="meta-item">
+          <strong>Duración</strong>
+          <span>3 horas</span>
+        </div>
+      </div>
+    </div>
+    <div class="badge-destacado">Destacado</div>
+  </article>
+</section>
+
+<!-- GRID DE EVENTOS -->
+<section class="eventos">
+  <div class="eventos-grid" id="eventosGrid">
+
+    <article class="evento-card" data-cat="visitas">
+      <div class="evento-card-top">
+        <div class="evento-card-fecha">
+          <strong>06</strong>
+          <span>Abr</span>
+        </div>
+        <div class="evento-card-header">
+          <p class="evento-cat">Visitas guiadas</p>
+          <h3>Tour por La Bombonera</h3>
+        </div>
+      </div>
+      <div class="evento-card-body">
+        <p>Recorrido completo por el estadio de Boca Juniors: vestuarios, campo de juego, museo y palco oficial. Guías especializados en historia xeneize.</p>
+      </div>
+      <div class="evento-card-footer">
+        <span>Brandsen 805</span>
+        <span class="hora">10:00 hs</span>
+      </div>
+    </article>
+
+    <article class="evento-card amarillo" data-cat="arte">
+      <div class="evento-card-top">
+        <div class="evento-card-fecha">
+          <strong>06</strong>
+          <span>Abr</span>
+        </div>
+        <div class="evento-card-header">
+          <p class="evento-cat">Arte</p>
+          <h3>Clínica de Pintura Callejera</h3>
+        </div>
+      </div>
+      <div class="evento-card-body">
+        <p>Taller abierto de muralismo con artistas del barrio. Aprendé técnicas de pintura al fresco en los mismos rincones donde nació el arte popular de La Boca.</p>
+      </div>
+      <div class="evento-card-footer">
+        <span>Caminito</span>
+        <span class="hora">14:00 hs</span>
+      </div>
+    </article>
+
+    <article class="evento-card" data-cat="gastronomia">
+      <div class="evento-card-top">
+        <div class="evento-card-fecha">
+          <strong>07</strong>
+          <span>Abr</span>
+        </div>
+        <div class="evento-card-header">
+          <p class="evento-cat">Gastronomía</p>
+          <h3>Feria de Sabores del Puerto</h3>
+        </div>
+      </div>
+      <div class="evento-card-body">
+        <p>Productores locales, bodegones y chefs del barrio presentan lo mejor de la cocina italiana y porteña. Pastas, vinos, fritos y dulces artesanales al aire libre.</p>
+      </div>
+      <div class="evento-card-footer">
+        <span>Vuelta de Rocha</span>
+        <span class="hora">11:00 hs</span>
+      </div>
+    </article>
+
+    <article class="evento-card rojo" data-cat="deporte">
+      <div class="evento-card-top">
+        <div class="evento-card-fecha">
+          <strong>08</strong>
+          <span>Abr</span>
+        </div>
+        <div class="evento-card-header">
+          <p class="evento-cat">Deporte</p>
+          <h3>Boca vs Racing — Liga Profesional</h3>
+        </div>
+      </div>
+      <div class="evento-card-body">
+        <p>Fecha 10 de la Liga Profesional de Fútbol. El Xeneize recibe a La Academia en el Estadio Alberto J. Armando. Partido imperdible para los amantes del fútbol argentino.</p>
+      </div>
+      <div class="evento-card-footer">
+        <span>La Bombonera</span>
+        <span class="hora">20:00 hs</span>
+      </div>
+    </article>
+
+    <article class="evento-card" data-cat="musica">
+      <div class="evento-card-top">
+        <div class="evento-card-fecha">
+          <strong>10</strong>
+          <span>Abr</span>
+        </div>
+        <div class="evento-card-header">
+          <p class="evento-cat">Música</p>
+          <h3>Milonga Abierta en el Caminito</h3>
+        </div>
+      </div>
+      <div class="evento-card-body">
+        <p>Milonga popular y gratuita en el Caminito. Todos los niveles son bienvenidos. La orquesta toca en vivo desde las 20 hs y hay clases introductorias antes del baile.</p>
+      </div>
+      <div class="evento-card-footer">
+        <span>Caminito s/n</span>
+        <span class="hora">19:00 hs</span>
+      </div>
+    </article>
+
+    <article class="evento-card" data-cat="arte">
+      <div class="evento-card-top">
+        <div class="evento-card-fecha">
+          <strong>11</strong>
+          <span>Abr</span>
+        </div>
+        <div class="evento-card-header">
+          <p class="evento-cat">Arte</p>
+          <h3>Expo Nuevos Artistas de La Boca</h3>
+        </div>
+      </div>
+      <div class="evento-card-body">
+        <p>Muestra colectiva de artistas emergentes del barrio en el Museo Quinquela Martín. Pinturas, esculturas y fotografía documental sobre la identidad boquense contemporánea.</p>
+      </div>
+      <div class="evento-card-footer">
+        <span>Museo Quinquela</span>
+        <span class="hora">15:00 hs</span>
+      </div>
+    </article>
+
+    <article class="evento-card" data-cat="visitas">
+      <div class="evento-card-top">
+        <div class="evento-card-fecha">
+          <strong>12</strong>
+          <span>Abr</span>
+        </div>
+        <div class="evento-card-header">
+          <p class="evento-cat">Visitas guiadas</p>
+          <h3>Historia Viva del Riachuelo</h3>
+        </div>
+      </div>
+      <div class="evento-card-body">
+        <p>Recorrido histórico por las orillas del Riachuelo y la Vuelta de Rocha con un guía especialista. Desde la llegada de los inmigrantes genoveses hasta el barrio que conocemos hoy.</p>
+      </div>
+      <div class="evento-card-footer">
+        <span>Av. P. de Mendoza</span>
+        <span class="hora">10:30 hs</span>
+      </div>
+    </article>
+
+    <article class="evento-card amarillo" data-cat="musica">
+      <div class="evento-card-top">
+        <div class="evento-card-fecha">
+          <strong>13</strong>
+          <span>Abr</span>
+        </div>
+        <div class="evento-card-header">
+          <p class="evento-cat">Música</p>
+          <h3>Noche de Murga Boquense</h3>
+        </div>
+      </div>
+      <div class="evento-card-body">
+        <p>La murga del barrio sale a las calles del Caminito con trajes, bombos y canto. Una tradición popular que mezcla carnaval, protesta y alegría pura en cada esquina de La Boca.</p>
+      </div>
+      <div class="evento-card-footer">
+        <span>Barrio La Boca</span>
+        <span class="hora">20:30 hs</span>
+      </div>
+    </article>
+
+    <article class="evento-card" data-cat="gastronomia">
+      <div class="evento-card-top">
+        <div class="evento-card-fecha">
+          <strong>14</strong>
+          <span>Abr</span>
+        </div>
+        <div class="evento-card-header">
+          <p class="evento-cat">Gastronomía</p>
+          <h3>Cena de Pasta Genovesa</h3>
+        </div>
+      </div>
+      <div class="evento-card-body">
+        <p>El tradicional bodegón La Pergola abre sus puertas para una cena especial con recetas genovesas de origen, vino de la casa y música italiana en vivo. Reserva obligatoria.</p>
+      </div>
+      <div class="evento-card-footer">
+        <span>La Pergola, La Boca</span>
+        <span class="hora">21:00 hs</span>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter">
+  <div>
+    <h2><em>Sumate</em> a lo que pasa</h2>
+    <p>Recibí novedades sobre la agenda cultural del barrio y recomendaciones exclusivas directo a tu mail.</p>
+  </div>
+  <div class="newsletter-form">
+    <input type="email" placeholder="tu@email.com" />
+    <button type="button">Suscribirme</button>
+  </div>
+</section>
+</main>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-logo">LA <span>BOCA</span></div>
+    <ul class="footer-nav">
+      <li><a href="historia.html">Historia</a></li>
+      <li><a href="lugares.html">Lugares</a></li>
+      <li><a href="agenda.html">Agenda</a></li>
+      <li><a href="mapa.html">Mapa</a></li>
+      <li><a href="#">Galería</a></li>
+      <li><a href="#">Contacto</a></li>
+    </ul>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 Barrio La Boca · Grupo 3 · Tecnología</span>
+    <span class="footer-loc">Buenos Aires — Argentina</span>
+  </div>
+</footer>
+
+</body>
+</html>

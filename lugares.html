@@ -2,27 +2,27 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Lugares — Barrio La Boca</title>
 </head>
 <body>
 
 <!-- NAV -->
-<nav>
-  <a href="index.html">
-    <span>Barrio</span>
-    <span>la Boca</span>
-  </a>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="historia.html">Historia</a></li>
-    <li><a href="lugares.html">Lugares</a></li>
-    <li><a href="agenda.html">Agenda</a></li>
-    <li><a href="mapa.html">Mapa</a></li>
-  </ul>
-  <button aria-label="Buscar">Buscar</button>
-</nav>
+<header>
+  <nav>
+    <img src ="imgs/logo.png" alt="logo de la barra"></img>
 
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="historia.html">Historia</a></li>
+      <li><a href="lugares.html">Lugares</a></li>
+      <li><a href="agenda.html">Agenda</a></li>
+      <li><a href="mapa.html">Mapa</a></li>
+    </ul>
+    <button aria-label="Buscar">Buscar</button>
+  </nav>
+</header>
+
+<main>
 <!-- HERO -->
 <section>
   <h1>Donde mires, hay historia</h1>
@@ -184,7 +184,7 @@
   <p>Más de 47 puntos de interés con filtros por categoría y recomendaciones exclusivas.</p>
   <a href="mapa.html">Ver el Mapa →</a>
 </section>
-
+</main>
 <!-- FOOTER -->
 <footer>
   <p>LA <strong>BOCA</strong></p>
@@ -201,22 +201,6 @@
   <p>© 2026 Barrio La Boca · Grupo 3 · Tecnología</p>
   <p>Buenos Aires — Argentina</p>
 </footer>
-
-<script>
-  // Filtros
-  const filterBtns = document.querySelectorAll('[data-cat]');
-  const articulos = document.querySelectorAll('#lugares article');
-
-  filterBtns.forEach(btn => {
-    if (btn.tagName !== 'BUTTON') return;
-    btn.addEventListener('click', () => {
-      const cat = btn.dataset.cat;
-      articulos.forEach(art => {
-        art.hidden = cat !== 'todo' && art.dataset.cat !== cat;
-      });
-    });
-  });
-</script>
 
 </body>
 </html>
