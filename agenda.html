@@ -2,312 +2,189 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Agenda — Barrio La Boca</title>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,700;0,900;1,700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <title>Agenda — La Boca</title>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-    <img src ="imgs/logo.png" alt="logo de la barra"></img>
-
-  <ul class="nav-links">
+  <img src="imgs/logo.png" alt="logo de la barra">
+  <ul>
     <li><a href="index.html">Home</a></li>
     <li><a href="historia.html">Historia</a></li>
     <li><a href="lugares.html">Lugares</a></li>
-    <li><a href="agenda.html" class="active">Agenda</a></li>
+    <li><a href="agenda.html">Agenda</a></li>
     <li><a href="mapa.html">Mapa</a></li>
   </ul>
   <search>
-                <input placeholder="Buscar">
+    <input placeholder="Buscar">
     <button>Buscar</button>
-    </search>
+  </search>
 </nav>
 
 <!-- HERO -->
-<header class="hero">
+<header>
   <h1>Lo que pasa esta semana</h1>
   <h5>Eventos, shows y actividades culturales de La Boca. Tango, arte, fútbol y mucho más, todos los días del año.</h5>
 </header>
 
 <main>
-<!-- TICKER -->
-<div class="ticker">
-  <div class="ticker-inner">
-    <p>Milonga en Caminito</p><p>Visita guiada Bombonera</p><p>Feria de artesanos</p><p>Show de tango</p><p>Expo Quinquela</p><p>Mercado del Puerto</p><p>Noche de murga</p><p>Clínica de pintura</p>
-    <p>Milonga en Caminito</p><p>Visita guiada Bombonera</p><p>Feria de artesanos</p><p>Show de tango</p><p>Expo Quinquela</p><p>Mercado del Puerto</p><p>Noche de murga</p><p>Clínica de pintura</p>
-  </div>
-</div>
 
-<!-- FILTROS -->
-<section class="filtros">
-    
-  <p class="filtros-label">— Filtrar por tipo de evento</p>
-  <div class="filtros-lista">
-    <button>Todo</button>
-    <button>Arte</button>
-    <button>Música</button>
-    <button>Deporte</button>
-    <button>Gastronomía</button>
-    <button>Visitas guiadas</button>
-  </div>
-</section>
-
-<!-- EVENTO DESTACADO -->
-<section class="destacado">
-  <article class="evento-destacado" data-cat="musica">
-    <div class="destacado-fecha">
-      <strong>05</strong>
-      <span>Abr</span>
-      <span>2026</span>
-    </div>
-    <div class="destacado-cuerpo">
-      <p class="evento-cat">Música · Nocturnidad</p>
-      <h2>Gran Noche<br>de Tango</h2>
-      <p>
-        El Caminito se viste de gala para una noche única con los mejores exponentes del tango de Buenos Aires.
-        Tres orquestas en vivo, bailarines profesionales y el alma del barrio más porteño de todos.
-        Una experiencia que no se repite.
-      </p>
-      <div class="destacado-meta">
-        <div class="meta-item">
-          <strong>Horario</strong>
-          <span>21:00 hs</span>
-        </div>
-        <div class="meta-item">
-          <strong>Lugar</strong>
-          <span>Caminito s/n</span>
-        </div>
-        <div class="meta-item">
-          <strong>Entrada</strong>
-          <span>$4.500 ARS</span>
-        </div>
-        <div class="meta-item">
-          <strong>Duración</strong>
-          <span>3 horas</span>
-        </div>
-      </div>
-    </div>
-    <div class="badge-destacado">Destacado</div>
-  </article>
-</section>
-
-<!-- GRID DE EVENTOS -->
-<section class="eventos">
-  <div class="eventos-grid" id="eventosGrid">
-
-    <article class="evento-card" data-cat="visitas">
-      <div class="evento-card-top">
-        <div class="evento-card-fecha">
-          <strong>06</strong>
-          <span>Abr</span>
-        </div>
-        <div class="evento-card-header">
-          <p class="evento-cat">Visitas guiadas</p>
-          <h3>Tour por La Bombonera</h3>
-        </div>
-      </div>
-      <div class="evento-card-body">
-        <p>Recorrido completo por el estadio de Boca Juniors: vestuarios, campo de juego, museo y palco oficial. Guías especializados en historia xeneize.</p>
-      </div>
-      <div class="evento-card-footer">
-        <span>Brandsen 805</span>
-        <span class="hora">10:00 hs</span>
-      </div>
-    </article>
-
-    <article class="evento-card amarillo" data-cat="arte">
-      <div class="evento-card-top">
-        <div class="evento-card-fecha">
-          <strong>06</strong>
-          <span>Abr</span>
-        </div>
-        <div class="evento-card-header">
-          <p class="evento-cat">Arte</p>
-          <h3>Clínica de Pintura Callejera</h3>
-        </div>
-      </div>
-      <div class="evento-card-body">
-        <p>Taller abierto de muralismo con artistas del barrio. Aprendé técnicas de pintura al fresco en los mismos rincones donde nació el arte popular de La Boca.</p>
-      </div>
-      <div class="evento-card-footer">
-        <span>Caminito</span>
-        <span class="hora">14:00 hs</span>
-      </div>
-    </article>
-
-    <article class="evento-card" data-cat="gastronomia">
-      <div class="evento-card-top">
-        <div class="evento-card-fecha">
-          <strong>07</strong>
-          <span>Abr</span>
-        </div>
-        <div class="evento-card-header">
-          <p class="evento-cat">Gastronomía</p>
-          <h3>Feria de Sabores del Puerto</h3>
-        </div>
-      </div>
-      <div class="evento-card-body">
-        <p>Productores locales, bodegones y chefs del barrio presentan lo mejor de la cocina italiana y porteña. Pastas, vinos, fritos y dulces artesanales al aire libre.</p>
-      </div>
-      <div class="evento-card-footer">
-        <span>Vuelta de Rocha</span>
-        <span class="hora">11:00 hs</span>
-      </div>
-    </article>
-
-    <article class="evento-card rojo" data-cat="deporte">
-      <div class="evento-card-top">
-        <div class="evento-card-fecha">
-          <strong>08</strong>
-          <span>Abr</span>
-        </div>
-        <div class="evento-card-header">
-          <p class="evento-cat">Deporte</p>
-          <h3>Boca vs Racing — Liga Profesional</h3>
-        </div>
-      </div>
-      <div class="evento-card-body">
-        <p>Fecha 10 de la Liga Profesional de Fútbol. El Xeneize recibe a La Academia en el Estadio Alberto J. Armando. Partido imperdible para los amantes del fútbol argentino.</p>
-      </div>
-      <div class="evento-card-footer">
-        <span>La Bombonera</span>
-        <span class="hora">20:00 hs</span>
-      </div>
-    </article>
-
-    <article class="evento-card" data-cat="musica">
-      <div class="evento-card-top">
-        <div class="evento-card-fecha">
-          <strong>10</strong>
-          <span>Abr</span>
-        </div>
-        <div class="evento-card-header">
-          <p class="evento-cat">Música</p>
-          <h3>Milonga Abierta en el Caminito</h3>
-        </div>
-      </div>
-      <div class="evento-card-body">
-        <p>Milonga popular y gratuita en el Caminito. Todos los niveles son bienvenidos. La orquesta toca en vivo desde las 20 hs y hay clases introductorias antes del baile.</p>
-      </div>
-      <div class="evento-card-footer">
-        <span>Caminito s/n</span>
-        <span class="hora">19:00 hs</span>
-      </div>
-    </article>
-
-    <article class="evento-card" data-cat="arte">
-      <div class="evento-card-top">
-        <div class="evento-card-fecha">
-          <strong>11</strong>
-          <span>Abr</span>
-        </div>
-        <div class="evento-card-header">
-          <p class="evento-cat">Arte</p>
-          <h3>Expo Nuevos Artistas de La Boca</h3>
-        </div>
-      </div>
-      <div class="evento-card-body">
-        <p>Muestra colectiva de artistas emergentes del barrio en el Museo Quinquela Martín. Pinturas, esculturas y fotografía documental sobre la identidad boquense contemporánea.</p>
-      </div>
-      <div class="evento-card-footer">
-        <span>Museo Quinquela</span>
-        <span class="hora">15:00 hs</span>
-      </div>
-    </article>
-
-    <article class="evento-card" data-cat="visitas">
-      <div class="evento-card-top">
-        <div class="evento-card-fecha">
-          <strong>12</strong>
-          <span>Abr</span>
-        </div>
-        <div class="evento-card-header">
-          <p class="evento-cat">Visitas guiadas</p>
-          <h3>Historia Viva del Riachuelo</h3>
-        </div>
-      </div>
-      <div class="evento-card-body">
-        <p>Recorrido histórico por las orillas del Riachuelo y la Vuelta de Rocha con un guía especialista. Desde la llegada de los inmigrantes genoveses hasta el barrio que conocemos hoy.</p>
-      </div>
-      <div class="evento-card-footer">
-        <span>Av. P. de Mendoza</span>
-        <span class="hora">10:30 hs</span>
-      </div>
-    </article>
-
-    <article class="evento-card amarillo" data-cat="musica">
-      <div class="evento-card-top">
-        <div class="evento-card-fecha">
-          <strong>13</strong>
-          <span>Abr</span>
-        </div>
-        <div class="evento-card-header">
-          <p class="evento-cat">Música</p>
-          <h3>Noche de Murga Boquense</h3>
-        </div>
-      </div>
-      <div class="evento-card-body">
-        <p>La murga del barrio sale a las calles del Caminito con trajes, bombos y canto. Una tradición popular que mezcla carnaval, protesta y alegría pura en cada esquina de La Boca.</p>
-      </div>
-      <div class="evento-card-footer">
-        <span>Barrio La Boca</span>
-        <span class="hora">20:30 hs</span>
-      </div>
-    </article>
-
-    <article class="evento-card" data-cat="gastronomia">
-      <div class="evento-card-top">
-        <div class="evento-card-fecha">
-          <strong>14</strong>
-          <span>Abr</span>
-        </div>
-        <div class="evento-card-header">
-          <p class="evento-cat">Gastronomía</p>
-          <h3>Cena de Pasta Genovesa</h3>
-        </div>
-      </div>
-      <div class="evento-card-body">
-        <p>El tradicional bodegón La Pergola abre sus puertas para una cena especial con recetas genovesas de origen, vino de la casa y música italiana en vivo. Reserva obligatoria.</p>
-      </div>
-      <div class="evento-card-footer">
-        <span>La Pergola, La Boca</span>
-        <span class="hora">21:00 hs</span>
-      </div>
-    </article>
-
-  </div>
-</section>
-
-<!-- NEWSLETTER -->
-<section class="newsletter">
+  <!-- TICKER -->
   <div>
-    <h2><em>Sumate</em> a lo que pasa</h2>
+    <p>Milonga en Caminito / Visita guiada Bombonera / Feria de artesanos / Show de tango / Expo Quinquela / Mercado del Puerto / Noche de murga / Clínica de pintura</p>
+  </div>
+
+  <!-- FILTROS -->
+  <section>
+    <p>— Filtrar por tipo de evento</p>
+    <div>
+      <button>Todo</button>
+      <button>Arte</button>
+      <button>Música</button>
+      <button>Deporte</button>
+      <button>Gastronomía</button>
+      <button>Visitas guiadas</button>
+    </div>
+  </section>
+
+  <p> </p>
+
+  <!-- EVENTO DESTACADO -->
+  <section>
+    <article>
+      <h2>Gran Noche de Tango</h2>
+      <h4>Música · Nocturnidad</h4>
+      <h3>05 Abr 2026</h3>
+      <p>El Caminito se viste de gala para una noche única con los mejores exponentes del tango de Buenos Aires. Tres orquestas en vivo, bailarines profesionales y el alma del barrio más porteño de todos. Una experiencia que no se repite.</p>
+      <p>Horario: 21:00 hs</p>
+      <p>Lugar: Caminito s/n</p>
+      <p>Entrada: $4.500 ARS</p>
+      <p>Duración: 3 horas</p>
+      <h6>Destacado</h6>
+    </article>
+  </section>
+
+  <p> </p>
+
+  <!-- EVENTOS -->
+  <section>
+
+    <article>
+      <h3>Tour por La Bombonera</h3>
+      <h4>Visitas guiadas</h4>
+      <h5>06 Abr</h5>
+      <p>Recorrido completo por el estadio de Boca Juniors: vestuarios, campo de juego, museo y palco oficial. Guías especializados en historia xeneize.</p>
+      <p>Brandsen 805 — 10:00 hs</p>
+    </article>
+
+    <p> </p>
+
+    <article>
+      <h3>Clínica de Pintura Callejera</h3>
+      <h4>Arte</h4>
+      <h5>06 Abr</h5>
+      <p>Taller abierto de muralismo con artistas del barrio. Aprendé técnicas de pintura al fresco en los mismos rincones donde nació el arte popular de La Boca.</p>
+      <p>Caminito — 14:00 hs</p>
+    </article>
+
+    <p> </p>
+
+    <article>
+      <h3>Feria de Sabores del Puerto</h3>
+      <h4>Gastronomía</h4>
+      <h5>07 Abr</h5>
+      <p>Productores locales, bodegones y chefs del barrio presentan lo mejor de la cocina italiana y porteña. Pastas, vinos, fritos y dulces artesanales al aire libre.</p>
+      <p>Vuelta de Rocha — 11:00 hs</p>
+    </article>
+
+    <p> </p>
+
+    <article>
+      <h3>Boca vs Racing — Liga Profesional</h3>
+      <h4>Deporte</h4>
+      <h5>08 Abr</h5>
+      <p>Fecha 10 de la Liga Profesional de Fútbol. El Xeneize recibe a La Academia en el Estadio Alberto J. Armando. Partido imperdible para los amantes del fútbol argentino.</p>
+      <p>La Bombonera — 20:00 hs</p>
+    </article>
+
+    <p> </p>
+
+    <article>
+      <h3>Milonga Abierta en el Caminito</h3>
+      <h4>Música</h4>
+      <h5>10 Abr</h5>
+      <p>Milonga popular y gratuita en el Caminito. Todos los niveles son bienvenidos. La orquesta toca en vivo desde las 20 hs y hay clases introductorias antes del baile.</p>
+      <p>Caminito s/n — 19:00 hs</p>
+    </article>
+
+    <p> </p>
+
+    <article>
+      <h3>Expo Nuevos Artistas de La Boca</h3>
+      <h4>Arte</h4>
+      <h5>11 Abr</h5>
+      <p>Muestra colectiva de artistas emergentes del barrio en el Museo Quinquela Martín. Pinturas, esculturas y fotografía documental sobre la identidad boquense contemporánea.</p>
+      <p>Museo Quinquela — 15:00 hs</p>
+    </article>
+
+    <p> </p>
+
+    <article>
+      <h3>Historia Viva del Riachuelo</h3>
+      <h4>Visitas guiadas</h4>
+      <h5>12 Abr</h5>
+      <p>Recorrido histórico por las orillas del Riachuelo y la Vuelta de Rocha con un guía especialista. Desde la llegada de los inmigrantes genoveses hasta el barrio que conocemos hoy.</p>
+      <p>Av. P. de Mendoza — 10:30 hs</p>
+    </article>
+
+    <p> </p>
+
+    <article>
+      <h3>Noche de Murga Boquense</h3>
+      <h4>Música</h4>
+      <h5>13 Abr</h5>
+      <p>La murga del barrio sale a las calles del Caminito con trajes, bombos y canto. Una tradición popular que mezcla carnaval, protesta y alegría pura en cada esquina de La Boca.</p>
+      <p>Barrio La Boca — 20:30 hs</p>
+    </article>
+
+    <p> </p>
+
+    <article>
+      <h3>Cena de Pasta Genovesa</h3>
+      <h4>Gastronomía</h4>
+      <h5>14 Abr</h5>
+      <p>El tradicional bodegón La Pergola abre sus puertas para una cena especial con recetas genovesas de origen, vino de la casa y música italiana en vivo. Reserva obligatoria.</p>
+      <p>La Pergola, La Boca — 21:00 hs</p>
+    </article>
+
+  </section>
+
+  <p> </p>
+
+  <!-- NEWSLETTER -->
+  <section>
+    <h2>Sumate a lo que pasa</h2>
     <p>Recibí novedades sobre la agenda cultural del barrio y recomendaciones exclusivas directo a tu mail.</p>
-  </div>
-  <div class="newsletter-form">
-    <input type="email" placeholder="tu@email.com" />
+    <input type="email" placeholder="tu@email.com">
     <button type="button">Suscribirme</button>
-  </div>
-</section>
+  </section>
+
 </main>
+
 <!-- FOOTER -->
 <footer>
-  <div class="footer-top">
-    <div class="footer-logo">LA <span>BOCA</span></div>
-    <ul class="footer-nav">
-      <li><a href="historia.html">Historia</a></li>
-      <li><a href="lugares.html">Lugares</a></li>
-      <li><a href="agenda.html">Agenda</a></li>
-      <li><a href="mapa.html">Mapa</a></li>
-      <li><a href="#">Galería</a></li>
-      <li><a href="#">Contacto</a></li>
-    </ul>
-  </div>
-  <div class="footer-bottom">
-    <span class="footer-copy">© 2026 Barrio La Boca · Grupo 3 · Tecnología</span>
-    <span class="footer-loc">Buenos Aires — Argentina</span>
-  </div>
+  <p>LA BOCA</p>
+  <ul>
+    <li><a href="historia.html">Historia</a></li>
+    <li><a href="lugares.html">Lugares</a></li>
+    <li><a href="agenda.html">Agenda</a></li>
+    <li><a href="mapa.html">Mapa</a></li>
+    <li><a href="#">Galería</a></li>
+    <li><a href="#">Contacto</a></li>
+  </ul>
+  <p>© 2026 Barrio La Boca · Grupo 3 · Tecnología</p>
+  <p>Buenos Aires — Argentina</p>
 </footer>
 
 </body>
