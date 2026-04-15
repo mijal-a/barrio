@@ -2,7 +2,10 @@ h1{
     color:aqua;
 }
 
-
+#probandoHistoria{
+    text-decoration: underline;
+    background-color: blueviolet;
+}
 
 /*
 Van a usar 2 selectores de etiqueta, 
