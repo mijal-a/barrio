@@ -14,11 +14,207 @@ button{
 
 
 }
-#probandoHistoria{
-    text-decoration: underline;
-    background-color: blueviolet;
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* BODY */
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: #ffffff;
+  color: #111;
+}
+
+/* CONTENEDOR GENERAL */
+.container {
+  padding: 16px;
+}
+
+/* TITULOS */
+h1 {
+  font-size: 28px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* HEADER / BARRIO */
+.barrio {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+/* HERO */
+.hero {
+  margin-bottom: 20px;
+}
+
+.hero-title {
+  font-size: 26px;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.hero-desc {
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+/* STATS */
+.stats {
+  display: flex;
+  justify-content: space-between;
+  margin: 16px 0;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: #777;
+}
+
+/* TAGS / CATEGORÍAS */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 12px 0;
+}
+
+.tag {
+  font-size: 12px;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+
+/* FILTROS */
+.filtros {
+  margin: 20px 0;
+}
+
+.filtros-title {
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 8px;
+}
+
+.filtros-list {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.filtro {
+  font-size: 13px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: #f2f2f2;
+  cursor: pointer;
+}
+
+.filtro.active {
+  background: #111;
+  color: #fff;
+}
+
+/* CARDS */
+.card {
+  margin-bottom: 16px;
+}
+
+.card-category {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 4px;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* DESTACADO */
+.destacado {
+  background: #111;
+  color: white;
+  display: inline-block;
+  padding: 4px 8px;
+  font-size: 10px;
+  margin-top: 4px;
+}
+
+/* GRID LUGARES */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* MAPA */
+.mapa {
+  margin: 24px 0;
+}
+
+.mapa-box {
+  background: #f5f5f5;
+  padding: 20px;
+  text-align: center;
+}
+
+.mapa-btn {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: white;
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+}
+
+.nav-item {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #555;
+}
+
+.nav-item.active {
+  color: #000;
+  font-weight: bold;
+}
 /*
 Van a usar 2 selectores de etiqueta, 
 van a sacarle los puntitos que aparecen en los botones del nav.
