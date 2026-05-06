@@ -451,7 +451,7 @@ main > section:first-of-type {
 
 main > section:first-of-type > p {
   font-family: var(--font-cond);
-  font-size: 0.7rem;
+ 
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: #888;
@@ -835,6 +835,7 @@ body > header + main > section:last-child iframe {
 
 .numeritos{
 font-size:xx-large; 
+
 }
 
 /* ── TICKER / marquee ── */
