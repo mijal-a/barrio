@@ -833,6 +833,10 @@ body > header + main > section:last-child iframe {
   height: 320px;
 }
 
+.numeritos{
+font-size: large;
+}
+
 /* ── TICKER / marquee ── */
 .ticker {
   background: var(--negro);
