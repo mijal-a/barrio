@@ -834,7 +834,7 @@ body > header + main > section:last-child iframe {
 }
 
 .numeritos{
-font-size: large;
+font-size:xx-large; 
 }
 
 /* ── TICKER / marquee ── */
