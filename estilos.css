@@ -939,3 +939,9 @@ van a darle borde al div del logo
     flex-direction: column;
   }
 }
+.info-extra {
+  display: none;
+}
+.info-extra.visible {
+  display: block;
+}
