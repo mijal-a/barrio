@@ -918,12 +918,14 @@ van a darle borde al div del logo
 
 @media (max-width: 699px) {
   #btnMenu {
-    display: block;
+    display: block !important;
   }
   #principal {
     display: none !important;
+    width: 100%;
+    flex-direction: column;
   }
   #principal.abierto {
-    display: block !important;
+    display: flex !important;
   }
 }
