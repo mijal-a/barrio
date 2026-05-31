@@ -157,7 +157,9 @@ header, nav {
   z-index: 100;
   border-bottom: 3px solid var(--negro);
 }
-
+nav {
+  display: flex;
+}
 /* Cuando nav está dentro de header (lugares.html) */
 header nav {
   background: transparent;
@@ -908,24 +910,25 @@ van a sacarle los puntitos que aparecen en los botones del nav.
 van a darle a todas las imagenes una redondez en el borde.
 van a darle el mismo color de fondo a 3 secciones
 van a darle borde al div del logo
+
 #btnMenu {
   display: none;
   font-size: 24px;
   background: none;
   border: none;
   cursor: pointer;
+  color: var(--negro);
 }
 
 @media (max-width: 699px) {
   #btnMenu {
-    display: block !important;
+    display: block;
   }
-  #principal {
-    display: none !important;
-    width: 100%;
+  nav#principal {
+    display: none;
+  }
+  nav#principal.abierto {
+    display: flex;
     flex-direction: column;
-  }
-  #principal.abierto {
-    display: flex !important;
   }
 }
