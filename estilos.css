@@ -925,10 +925,17 @@ van a darle borde al div del logo
     display: block;
   }
   nav#principal {
-    display: none;
+    display: none !important;
   }
   nav#principal.abierto {
-    display: flex;
+    display: flex !important;
+    flex-direction: column;
+  }
+  nav#principal ul {
+    display: none !important;
+  }
+  nav#principal.abierto ul {
+    display: flex !important;
     flex-direction: column;
   }
 }
