@@ -908,3 +908,25 @@ van a sacarle los puntitos que aparecen en los botones del nav.
 van a darle a todas las imagenes una redondez en el borde.
 van a darle el mismo color de fondo a 3 secciones
 van a darle borde al div del logo
+#btnMenu {
+  display: block;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+@media (min-width: 700px) {
+  #btnMenu {
+    display: none;
+  }
+}
+
+@media (max-width: 699px) {
+  #principal {
+    display: none;
+  }
+  #principal.abierto {
+    display: block;
+  }
+}
