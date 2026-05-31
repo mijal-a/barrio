@@ -13,3 +13,7 @@ function toggleMenu() {
   const nav = document.getElementById('principal');
   nav.classList.toggle('abierto');
 }
+function toggleInfo(id) {
+  const info = document.getElementById(id);
+  info.classList.toggle('visible');
+}
