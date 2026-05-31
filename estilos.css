@@ -942,3 +942,6 @@ van a darle borde al div del logo
 .info-extra {
   display: none !important;
 }
+.info-extra.visible {
+  display: block !important;
+}
