@@ -940,8 +940,5 @@ van a darle borde al div del logo
   }
 }
 .info-extra {
-  display: none;
-}
-.info-extra.visible {
-  display: block;
+  display: none !important;
 }
