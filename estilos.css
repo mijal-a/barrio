@@ -146,7 +146,7 @@ button:hover {
 button p { color: inherit; font: inherit; margin: 0; }
 
 /* ── NAV ── */
-header {
+header, nav {
 	background: var(--amarillo);
   display: flex;
   align-items: center;
