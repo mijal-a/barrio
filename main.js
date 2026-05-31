@@ -9,3 +9,7 @@ function filtrar(categoria) {
     }
   });
 }
+function toggleMenu() {
+  const nav = document.getElementById('principal');
+  nav.classList.toggle('abierto');
+}
