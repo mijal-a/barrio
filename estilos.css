@@ -920,28 +920,34 @@ van a darle borde al div del logo
   color: var(--negro);
 }
 
-@media (max-width: 699px) {
+/* mobile: botón visible, nav oculto */
+#btnMenu {
+  display: block;
+}
+
+nav#principal {
+  display: none;
+}
+
+nav#principal.abierto {
+  display: flex;
+  flex-direction: column;
+}
+
+/* desktop: botón oculto, nav visible */
+@media (min-width: 700px) {
   #btnMenu {
-    display: block;
+    display: none;
   }
   nav#principal {
-    display: none !important;
-  }
-  nav#principal.abierto {
-    display: flex !important;
-    flex-direction: column;
-  }
-  nav#principal ul {
-    display: none !important;
-  }
-  nav#principal.abierto ul {
-    display: flex !important;
-    flex-direction: column;
+    display: flex;
   }
 }
+
 .info-extra {
-  display: none !important;
+  display: none;
 }
+
 .info-extra.visible {
-  display: block !important;
+  display: block;
 }
