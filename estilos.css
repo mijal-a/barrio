@@ -732,6 +732,8 @@ body > header + main > section:nth-child(2) button[data-cat="todo"] {
   border: 2px solid var(--negro);
   overflow: hidden;
   transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
 }
 
 #lugares article:hover {
