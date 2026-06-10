@@ -1,5 +1,5 @@
 function filtrar(categoria) {
-  const cards = document.querySelectorAll('[data-cat]');
+  const cards = document.querySelectorAll('article[data-cat]');
 
   cards.forEach(function(card) {
     if (categoria === 'todo' || card.dataset.cat.includes(categoria)) {
@@ -9,6 +9,7 @@ function filtrar(categoria) {
     }
   });
 }
+
 function toggleMenu() {
   const nav = document.getElementById('principal');
   nav.classList.toggle('abierto');
