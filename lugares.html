@@ -2,17 +2,21 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <title>Lugares — Barrio La Boca</title>
   <link rel="stylesheet" href="estilos.css"> 
 <script src="main.js"></script>
+
 </head>
 <body>
 
 <!-- NAV -->
 <header>
-  <nav>
-    <img src ="imgs/logo.png" alt="logo de la barra">
-
+  <img src ="imgs/logo.png" alt="logo de la barra">
+  
+  <button id="btnMenu" onclick="toggleMenu()">☰</button>
+  
+  <nav id="principal">
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="#">Historia</a></li>

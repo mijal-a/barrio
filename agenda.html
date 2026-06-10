@@ -5,27 +5,30 @@
   <title>Agenda — La Boca</title>
       <link rel="stylesheet" href="estilos.css"> 
 <script src="main.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <img src="imgs/logo.png" alt="logo de la barra">
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="#">Historia</a></li>
-    <li><a href="lugares.html">Lugares</a></li>
-    <li><a href="agenda.html">Agenda</a></li>
-    <li><a href="#">Mapa</a></li>
-  </ul>
-  <search>
-    <input placeholder="Buscar">
-    <button>Buscar</button>
-  </search>
-</nav>
-
 <!-- HERO -->
 <header>
+  <img src="imgs/logo.png" alt="logo de la barra">
+  <button id="btnMenu" onclick="toggleMenu()">☰</button>
+
+  
+  <!-- NAV -->
+  <nav id="princicpal">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#">Historia</a></li>
+      <li><a href="lugares.html">Lugares</a></li>
+      <li><a href="agenda.html">Agenda</a></li>
+      <li><a href="#">Mapa</a></li>
+    </ul>
+    <search>
+      <input placeholder="Buscar">
+      <button>Buscar</button>
+    </search>
+  </nav>
   <h1>Lo que pasa esta semana</h1>
   <h5>Eventos, shows y actividades culturales de La Boca. Tango, arte, fútbol y mucho más, todos los días del año.</h5>
 </header>
